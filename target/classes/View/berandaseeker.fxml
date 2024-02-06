@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="277.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Berandaseeker">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" layoutY="38.0" prefHeight="562.0" prefWidth="278.0">
+         <content>
+            <AnchorPane fx:id="anchorPane" prefHeight="1132.0" prefWidth="278.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00004b" height="99.0" stroke="BLACK" strokeType="INSIDE" width="278.0" />
+                  <Text fill="WHITE" layoutX="6.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bingung mau cari kerja kemana?" wrappingWidth="166.84521484375">
+                     <font>
+                        <Font name="Arial Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="11.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Opportunity solusinya" wrappingWidth="112.84521484375" />
+               </children></AnchorPane>
+         </content>
+      </ScrollPane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="51.0" layoutX="-6.0" layoutY="549.0" stroke="#ffffff00" strokeType="INSIDE" width="277.0" />
+      <Text fill="#2a3240" layoutX="81.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rekomendasi Pekerjaan">
+         <font>
+            <Font name="Arial Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text layoutX="7.0" layoutY="580.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beranda">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="76.0" layoutY="581.0" onMouseClicked="#moveCari" strokeType="OUTSIDE" strokeWidth="0.0" text="Cari" />
+      <Text layoutX="125.0" layoutY="581.0" onMouseClicked="#moveFavorit" strokeType="OUTSIDE" strokeWidth="0.0" text="Favorit" />
+      <Text layoutX="239.0" layoutY="581.0" onMouseClicked="#moveProfil" strokeType="OUTSIDE" strokeWidth="0.0" text="Profil" />
+   
+                  <Text layoutX="187.0" layoutY="582.0" onMouseClicked="#movePesan" strokeType="OUTSIDE" strokeWidth="0.0" text="Pesan" />
+   </children>
+</AnchorPane>

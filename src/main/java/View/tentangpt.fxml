@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="277.0" style="-fx-background-color: #1a4789;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Tentangpt">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="561.0" layoutY="38.0" stroke="WHITE" strokeType="INSIDE" width="277.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="117.0" layoutY="31.0" stroke="TRANSPARENT" strokeType="INSIDE" width="277.0" />
+      <Text fill="WHITE" layoutX="99.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bidang Pekerjaan">
+         <font>
+            <Font name="Arial Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#bfbdbc" layoutX="28.0" layoutY="139.0" onMouseClicked="#deskripsi" strokeType="OUTSIDE" strokeWidth="0.0" text="Deskripsi Pekerjaan" wrappingWidth="106.51188659667969">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Text>
+      <Line endX="18.0" layoutX="257.0" layoutY="148.0" startX="-110.71189880371094" />
+      <Text fill="#301e8d" layoutX="168.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tentang Perusahaan" wrappingWidth="106.51188659667969">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Text>
+      <Text fill="#bfbdbc" layoutX="9.0" layoutY="21.0" lineSpacing="5.0" onMouseClicked="#back" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; Kembali" wrappingWidth="92.998046875">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="judul" layoutX="1.0" layoutY="30.0" prefHeight="96.0" prefWidth="278.0" />
+      <VBox fx:id="deskripsi" layoutY="148.0" prefHeight="454.0" prefWidth="278.0" spacing="5.0">
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding></VBox>
+   </children>
+</AnchorPane>

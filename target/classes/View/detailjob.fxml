@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="277.0" style="-fx-background-color: #1a4789;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Detailjob">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e6e6e6" height="521.0" layoutY="28.0" stroke="WHITE" strokeType="INSIDE" width="278.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="406.0" layoutX="-1.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="278.0" />
+      <Text fill="WHITE" layoutX="99.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bidang Pekerjaan">
+         <font>
+            <Font name="Arial Bold" size="11.0" />
+         </font>
+      </Text>
+      <Text fill="#301e8d" layoutX="33.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deskripsi Pekerjaan" wrappingWidth="106.51188659667969">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Text>
+      <Line endX="85.66862487792969" layoutX="57.0" layoutY="147.0" startX="-100.0" />
+      <Text fill="#bfbdbc" layoutX="161.0" layoutY="138.0" onMouseClicked="#tentangpt" strokeType="OUTSIDE" strokeWidth="0.0" text="Tentang Perusahaan" wrappingWidth="106.51188659667969">
+         <font>
+            <Font name="System Bold" size="9.0" />
+         </font>
+      </Text>
+      <Text fill="#bfbdbc" layoutX="11.0" layoutY="21.0" lineSpacing="5.0" onMouseClicked="#back" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; Kembali" wrappingWidth="66.998046875">
+         <font>
+            <Font name="Arial" size="12.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="judul" layoutX="-1.0" layoutY="29.0" prefHeight="98.0" prefWidth="278.0" />
+      <Button layoutX="155.0" layoutY="561.0" mnemonicParsing="false" onMouseClicked="#registercampaign" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: navy;" text="Lamar Sekarang" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button layoutX="9.0" layoutY="561.0" mnemonicParsing="false" onMouseClicked="#simpancampaign" prefHeight="30.0" prefWidth="113.0" style="-fx-background-color: navy;" text="Simpan" textFill="WHITE">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <VBox fx:id="deskripsi" layoutY="148.0" prefHeight="406.0" prefWidth="277.0" spacing="5.0">
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding></VBox>
+   </children>
+</AnchorPane>

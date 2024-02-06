@@ -1,0 +1,369 @@
+@startuml
+package Entity{
+class RegisteredCampaignSeeker {
+    - id: int
+    - idCamp: int
+    - idSeeker: int
+
+    + RegisteredCampaignSeeker(id: int, idCamp: int, idSeeker: int)
+    + getId(): int
+    + setId(id: int): void
+    + getIdCamp(): int
+    + setIdCamp(idCamp: int): void
+    + getIdSeeker(): int
+    + setIdSeeker(idSeeker: int): void
+}
+
+class Work {
+    - id: int
+    - jabatan: String
+    - mulai: Date
+    - selesai: Date
+    - company: String
+    - deskripsi: String
+    - idSeeker: int
+
+    + Work(id: int, jabatan: String, mulai: Date, selesai: Date, company: String, deskripsi: String, idSeeker: int)
+    + Work()
+    + getId(): int
+    + setId(id: int): void
+    + getJabatan(): String
+    + setJabatan(jabatan: String): void
+    + getMulai(): Date
+    + setMulai(mulai: Date): void
+    + getSelesai(): Date
+    + setSelesai(selesai: Date): void
+    + getCompany(): String
+    + setCompany(company: String): void
+    + getDeskripsi(): String
+    + setDeskripsi(deskripsi: String): void
+    + getIdSeeker(): int
+    + setIdSeeker(idSeeker: int): void
+    + toString(): String
+}
+
+class Education {
+    - id: int
+    - institusi: String
+    - deskripsi: String
+    - lulus: Date
+    - studi: String
+    - nilai: int
+    - idSeeker: int
+
+    + Education(id: int, institusi: String, deskripsi: String, lulus: Date, studi: String, nilai: int, idSeeker: int)
+    + Education()
+    + getId(): int
+    + setId(id: int): void
+    + getInstitusi(): String
+    + setInstitusi(institusi: String): void
+    + getDeskripsi(): String
+    + setDeskripsi(deskripsi: String): void
+    + getLulus(): Date
+    + setLulus(lulus: Date): void
+    + getStudi(): String
+    + setStudi(studi: String): void
+    + getNilai(): int
+    + setNilai(nilai: int): void
+    + getIdSeeker(): int
+    + setIdSeeker(idSeeker: int): void
+    + toString(): String
+}
+
+class Company {
+    - id: int
+    - username: String
+    - password: String
+    - name: String
+    - email: String
+    - description: String
+    - location: String
+    - campaigns: List<Campaign>
+
+    + Company(id: int, username: String, password: String, name: String, email: String, description: String, location: String)
+    + Company()
+    + getId(): int
+    + setId(id: int): void
+    + getUsername(): String
+    + setUsername(username: String): void
+    + getPassword(): String
+    + setPassword(password: String): void
+    + getName(): String
+    + setName(name: String): void
+    + getEmail(): String
+    + setEmail(email: String): void
+    + getDescription(): String
+    + setDescription(description: String): void
+    + getLocation(): String
+    + setLocation(location: String): void
+    + addCampaign(campaign: Campaign): void
+    + removeCampaign(campaign: Campaign): void
+    + getCampaigns(): List<Campaign>
+    + toString(): String
+}
+
+class Campaign {
+    - id: int
+    - id_comp: int
+    - name: String
+    - description: String
+    - location: String
+    - salary: String
+    - hour: HourType
+    - education: String
+    - work: String
+
+    + Campaign(id: int, id_comp: int, name: String, description: String, location: String, salary: String, hour: HourType, education: String, work: String)
+    + Campaign(id: int, id_comp: int, name: String, description: String, location: String, salary: String, hour: String, education: String, work: String)
+    + Campaign()
+    + getId(): int
+    + setId(id: int): void
+    + getId_comp(): int
+    + setId_comp(id_comp: int): void
+    + getName(): String
+    + setName(name: String): void
+    + getDescription(): String
+    + setDescription(description: String): void
+    + getLocation(): String
+    + setLocation(location: String): void
+    + getSalary(): String
+    + setSalary(salary: String): void
+    + getHour(): HourType
+    + setHour(hour: HourType): void
+    + getEducation(): String
+    + setEducation(education: String): void
+    + getWork(): String
+    + setWork(work: String): void
+    + toString(): String
+
+
+enum HourType {
+    HALF,
+    FULL,
+    INTERN
+}
+
+class JobSeeker {
+    - id: int
+    - username: String
+    - password: String
+    - name: String
+    - email: String
+    - address: String
+    - phoneNumber: String
+    - education: Education
+    - work: Work
+
+    + JobSeeker(id: int, username: String, password: String, name: String, email: String, address: String, phoneNumber: String, education: Education, work: Work)
+    + JobSeeker(id: int, username: String, password: String, name: String, email: String, address: String, phoneNumber: String)
+    + JobSeeker()
+    + getId(): int
+    + setId(id: int): void
+    + getUsername(): String
+    + setUsername(username: String): void
+    + getPassword(): String
+    + setPassword(password: String): void
+    + getName(): String
+    + setName(name: String): void
+    + getEmail(): String
+    + setEmail(email: String): void
+    + getAddress(): String
+    + setAddress(address: String): void
+    + getPhoneNumber(): String
+    + setPhoneNumber(phoneNumber: String): void
+    + getEducation(): Education
+    + setEducation(education: Education): void
+    + getWork(): Work
+    + setWork(work: Work): void
+    + toString(): String
+}
+
+Company "1" --> "*" Campaign : Membuat Campain
+JobSeeker "1" --> "*" Work : Riwayat Pekerjaan
+JobSeeker "1" --> "*" Education : Riwayat Pendidikan
+JobSeeker "1" --> "1" RegisteredCampaignSeeker : Daftar Campaign
+Campaign "1" --> "1" RegisteredCampaignSeeker : Daftar Pelamar
+}
+
+package Model {
+    class CampaignDAO {
+        - connection: Connection
+        --
+        + create(campaign: Campaign): void
+        + update(campaign: Campaign): void
+        + delete(id: int): void
+        + getAllCampaigns(): ArrayList<Campaign>
+    }
+    class CompanyDAO {
+        - connection: Connection
+        --
+        + create(company: Company): void
+        + update(company: Company): void
+        + delete(id: int): void
+        + getAllCompanies(): ArrayList<Company>
+    }
+    class JobSeekerDAO {
+        - connection: Connection
+        + create(jobSeeker: JobSeeker): void
+        + update(jobSeeker: JobSeeker): void
+        + delete(id: int): void
+        + getAllJobSeekers(): ArrayList<JobSeeker>
+        + registCampaign(id_seeker: int, id_camp: int): void
+        + readListApplications(): ArrayList<RegisteredCampaignSeeker>
+        + createEducation(education: Education): void
+        + updateEducation(education: Education): void
+        + readAllEducation(): ArrayList<Education>
+        + createWork(work: Work): void
+        + updateWork(work: Work): void
+        + readAllWork(): ArrayList<Work>
+    }
+}
+
+package Config {
+    class DBConnection {
+        - JDBC_DRIVER: String
+        - DB_URL: String
+        - USER: String
+        - PASS: String
+        - connection: Connection
+        + getConnection(): Connection
+    }
+}
+
+package view {
+    class berandapt {
+
+    }
+    
+    class berandaseeker {
+        
+    }
+    
+    class chatpt {
+        
+    }
+    
+    class daftarcampaign {
+        
+    }
+    
+    class daftarlamaran {
+        
+    }
+    
+    class detailjob {
+        
+    }
+    
+    class detailjobseeker {
+        
+    }
+    
+    class favoritseeker {
+        
+    }
+    
+    class listapplications {
+        
+    }
+    
+    class listriwayatkerja {
+        
+    }
+    
+    class listriwayatpendidikan {
+        
+    }
+    
+    class login {
+        
+    }
+    
+    class notifikasiseeker {
+        
+    }
+    
+    class pencarianseeker {
+        
+    }
+    
+    class pesanseeker {
+        
+    }
+    
+    class postjob {
+        
+    }
+    
+    class profilpt {
+        
+    }
+    
+    class register {
+        
+    }
+    
+    class riwayatkerja {
+        
+    }
+    
+    class riwayatpendidikan {
+        
+    }
+    
+    class saya {
+        
+    }
+    
+    class selamatdatang {
+        
+    }
+    
+    class start {
+        
+    }
+    
+    class tentangpt {
+        
+    }
+    
+    class updateprofilseeker {
+        
+    }
+    
+    class updateprofilseekerinput {
+        
+    }
+    
+    class updatept {
+        
+    }
+    
+    class updateptinput {
+        
+    }
+    
+    class updateriwayatkerja {
+        
+    }
+    
+    class updateriwayatpendidikan {
+        
+    }
+}
+
+package javafx{
+    class scene{}
+    class fxml{}
+    class application{}
+
+}
+
+Campaign --> CampaignDAO
+Company --> CompanyDAO
+JobSeeker --> JobSeekerDAO
+DBConnection --> CampaignDAO
+DBConnection --> JobSeekerDAO
+DBConnection --> CompanyDAO
+javafx --> view
+@enduml

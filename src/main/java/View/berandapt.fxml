@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Berandapt">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="335.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Design%20Apk%20Opportunity4All.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="30.0" layoutY="270.0" mnemonicParsing="false" onMouseClicked="#postjob" opacity="0.0" prefHeight="21.0" prefWidth="210.0" text="Post a Job" textFill="#1a4789">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="31.0" layoutY="390.0" mnemonicParsing="false" onMouseClicked="#viewcampaign" opacity="0.0" prefHeight="21.0" prefWidth="210.0" text="View Campaign" textFill="#1a4789">
+         <font>
+            <Font name="Arial Bold" size="17.0" />
+         </font>
+      </Button>
+      <Button layoutX="190.0" layoutY="563.0" mnemonicParsing="false" onMouseClicked="#profilpt" opacity="0.0" text="profilpt" />
+      <Button layoutX="122.0" layoutY="564.0" mnemonicParsing="false" onMouseClicked="#chatpt" opacity="0.0" text="chatpt" />
+   </children>
+</AnchorPane>
