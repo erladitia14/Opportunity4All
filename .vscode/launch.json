@@ -1,0 +1,23 @@
+{
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+                {
+                        "type": "java",
+                        "name": "Current File",
+                        "request": "launch",
+                        "mainClass": "${file}",
+                        "vmArgs": "--module-path='C:\\Program Files\\javafx-sdk-17.0.9\\lib' --add-modules=javafx.controls,javafx.graphics,javafx.fxml"
+                },
+                {
+                        "type": "java",
+                        "name": "App",
+                        "request": "launch",
+                        "mainClass": "com.jobportal.App",
+                        "projectName": "jobportal",
+                        "vmArgs": "--module-path='C:\\Program Files\\javafx-sdk-17.0.9\\lib' --add-modules=javafx.controls,javafx.graphics,javafx.fxml"
+                }
+        ]
+}
